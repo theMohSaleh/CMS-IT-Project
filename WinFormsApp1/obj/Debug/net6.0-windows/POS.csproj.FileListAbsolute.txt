@@ -1,0 +1,108 @@
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.exe
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.deps.json
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.runtimeconfig.json
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.pdb
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.AssemblyReference.cache
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Landing.resources
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.New_Order.resources
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.Properties.Resources.resources
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.GenerateResource.cache
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.AssemblyInfoInputs.cache
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.AssemblyInfo.cs
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.CoreCompileInputs.cache
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\refint\POS.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.pdb
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.genruntimeconfig.cache
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\ref\POS.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.MenuItemsFrm.resources
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Humanizer.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.CopyComplete
+C:\Users\mohN1080P\source\repos\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.CurrentOrdersFrm.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.exe
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.deps.json
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.runtimeconfig.json
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\POS.pdb
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Humanizer.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.AssemblyReference.cache
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.CurrentOrdersFrm.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Landing.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.MenuItemsFrm.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.New_Order.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.Properties.Resources.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.GenerateResource.cache
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.GeneratedMSBuildEditorConfig.editorconfig
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.AssemblyInfoInputs.cache
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.AssemblyInfo.cs
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.CoreCompileInputs.cache
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.CopyComplete
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\refint\POS.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.pdb
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\POS.genruntimeconfig.cache
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\WinFormsApp1\obj\Debug\net6.0-windows\ref\POS.dll
