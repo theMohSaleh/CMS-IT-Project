@@ -127,7 +127,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(544, 22);
+            lblTitle.Location = new Point(292, 22);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(168, 32);
             lblTitle.TabIndex = 7;
@@ -177,7 +177,7 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(220, 741);
+            panelMenu.Size = new Size(220, 606);
             panelMenu.TabIndex = 19;
             // 
             // btnMenu
@@ -276,7 +276,7 @@
             panelTitle.Dock = DockStyle.Top;
             panelTitle.Location = new Point(220, 0);
             panelTitle.Name = "panelTitle";
-            panelTitle.Size = new Size(1318, 75);
+            panelTitle.Size = new Size(814, 75);
             panelTitle.TabIndex = 20;
             // 
             // btnCloseForm
@@ -321,7 +321,7 @@
             panelDesktopPanel.Controls.Add(label14);
             panelDesktopPanel.Location = new Point(220, 75);
             panelDesktopPanel.Name = "panelDesktopPanel";
-            panelDesktopPanel.Size = new Size(1318, 666);
+            panelDesktopPanel.Size = new Size(814, 531);
             panelDesktopPanel.TabIndex = 21;
             // 
             // panel2
@@ -377,7 +377,7 @@
             tableNo8Pnl.BackColor = Color.SkyBlue;
             tableNo8Pnl.Controls.Add(pictureBox8);
             tableNo8Pnl.Controls.Add(label9);
-            tableNo8Pnl.Location = new Point(398, 370);
+            tableNo8Pnl.Location = new Point(148, 339);
             tableNo8Pnl.Name = "tableNo8Pnl";
             tableNo8Pnl.Size = new Size(122, 158);
             tableNo8Pnl.TabIndex = 20;
@@ -413,7 +413,7 @@
             tableNo7Pnl.BackColor = Color.SkyBlue;
             tableNo7Pnl.Controls.Add(pictureBox7);
             tableNo7Pnl.Controls.Add(label8);
-            tableNo7Pnl.Location = new Point(270, 370);
+            tableNo7Pnl.Location = new Point(20, 339);
             tableNo7Pnl.Name = "tableNo7Pnl";
             tableNo7Pnl.Size = new Size(122, 158);
             tableNo7Pnl.TabIndex = 20;
@@ -449,7 +449,7 @@
             tableNo6Pnl.BackColor = Color.SkyBlue;
             tableNo6Pnl.Controls.Add(pictureBox6);
             tableNo6Pnl.Controls.Add(label7);
-            tableNo6Pnl.Location = new Point(910, 170);
+            tableNo6Pnl.Location = new Point(660, 139);
             tableNo6Pnl.Name = "tableNo6Pnl";
             tableNo6Pnl.Size = new Size(122, 158);
             tableNo6Pnl.TabIndex = 20;
@@ -485,7 +485,7 @@
             tableNo12Pnl.BackColor = Color.SkyBlue;
             tableNo12Pnl.Controls.Add(pictureBox13);
             tableNo12Pnl.Controls.Add(label15);
-            tableNo12Pnl.Location = new Point(910, 370);
+            tableNo12Pnl.Location = new Point(660, 339);
             tableNo12Pnl.Name = "tableNo12Pnl";
             tableNo12Pnl.Size = new Size(122, 158);
             tableNo12Pnl.TabIndex = 27;
@@ -521,7 +521,7 @@
             tableNo5Pnl.BackColor = Color.SkyBlue;
             tableNo5Pnl.Controls.Add(pictureBox5);
             tableNo5Pnl.Controls.Add(label6);
-            tableNo5Pnl.Location = new Point(782, 170);
+            tableNo5Pnl.Location = new Point(532, 139);
             tableNo5Pnl.Name = "tableNo5Pnl";
             tableNo5Pnl.Size = new Size(122, 158);
             tableNo5Pnl.TabIndex = 20;
@@ -557,7 +557,7 @@
             tableNo11Pnl.BackColor = Color.SkyBlue;
             tableNo11Pnl.Controls.Add(pictureBox14);
             tableNo11Pnl.Controls.Add(label16);
-            tableNo11Pnl.Location = new Point(782, 370);
+            tableNo11Pnl.Location = new Point(532, 339);
             tableNo11Pnl.Name = "tableNo11Pnl";
             tableNo11Pnl.Size = new Size(122, 158);
             tableNo11Pnl.TabIndex = 28;
@@ -593,7 +593,7 @@
             tableNo4Pnl.BackColor = Color.SkyBlue;
             tableNo4Pnl.Controls.Add(pictureBox4);
             tableNo4Pnl.Controls.Add(label5);
-            tableNo4Pnl.Location = new Point(654, 170);
+            tableNo4Pnl.Location = new Point(404, 139);
             tableNo4Pnl.Name = "tableNo4Pnl";
             tableNo4Pnl.Size = new Size(122, 158);
             tableNo4Pnl.TabIndex = 20;
@@ -629,7 +629,7 @@
             tableNo10Pnl.BackColor = Color.SkyBlue;
             tableNo10Pnl.Controls.Add(pictureBox15);
             tableNo10Pnl.Controls.Add(label17);
-            tableNo10Pnl.Location = new Point(654, 370);
+            tableNo10Pnl.Location = new Point(404, 339);
             tableNo10Pnl.Name = "tableNo10Pnl";
             tableNo10Pnl.Size = new Size(122, 158);
             tableNo10Pnl.TabIndex = 22;
@@ -665,7 +665,7 @@
             tableNo3Pnl.BackColor = Color.SkyBlue;
             tableNo3Pnl.Controls.Add(pictureBox3);
             tableNo3Pnl.Controls.Add(label4);
-            tableNo3Pnl.Location = new Point(526, 170);
+            tableNo3Pnl.Location = new Point(276, 139);
             tableNo3Pnl.Name = "tableNo3Pnl";
             tableNo3Pnl.Size = new Size(122, 158);
             tableNo3Pnl.TabIndex = 20;
@@ -701,7 +701,7 @@
             tableNo9Pnl.BackColor = Color.SkyBlue;
             tableNo9Pnl.Controls.Add(pictureBox16);
             tableNo9Pnl.Controls.Add(label18);
-            tableNo9Pnl.Location = new Point(526, 370);
+            tableNo9Pnl.Location = new Point(276, 339);
             tableNo9Pnl.Name = "tableNo9Pnl";
             tableNo9Pnl.Size = new Size(122, 158);
             tableNo9Pnl.TabIndex = 21;
@@ -737,7 +737,7 @@
             tableNo2Pnl.BackColor = Color.SkyBlue;
             tableNo2Pnl.Controls.Add(pictureBox2);
             tableNo2Pnl.Controls.Add(label3);
-            tableNo2Pnl.Location = new Point(398, 170);
+            tableNo2Pnl.Location = new Point(148, 139);
             tableNo2Pnl.Name = "tableNo2Pnl";
             tableNo2Pnl.Size = new Size(122, 158);
             tableNo2Pnl.TabIndex = 19;
@@ -773,7 +773,7 @@
             tableNo1Pnl.BackColor = Color.SkyBlue;
             tableNo1Pnl.Controls.Add(pictureBox1);
             tableNo1Pnl.Controls.Add(label2);
-            tableNo1Pnl.Location = new Point(270, 170);
+            tableNo1Pnl.Location = new Point(20, 139);
             tableNo1Pnl.Name = "tableNo1Pnl";
             tableNo1Pnl.Size = new Size(122, 158);
             tableNo1Pnl.TabIndex = 18;
@@ -808,11 +808,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1538, 741);
+            ClientSize = new Size(1034, 606);
             Controls.Add(panelDesktopPanel);
             Controls.Add(panelTitle);
             Controls.Add(panelMenu);
-            MinimumSize = new Size(1554, 780);
+            MinimumSize = new Size(1050, 645);
             Name = "Landing";
             Text = "Canteen Management System";
             Load += Landing_Load;

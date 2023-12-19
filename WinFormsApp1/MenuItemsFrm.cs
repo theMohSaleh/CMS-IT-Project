@@ -10,6 +10,7 @@ using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace POS
 {
@@ -37,10 +38,10 @@ namespace POS
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string title = imageTitleTxt.Text;
+                //string title = imageTitleTxt.Text;
                 byte[] imageData = File.ReadAllBytes(openFileDialog.FileName);
 
-                SaveImage(title, imageData);
+                //SaveImage(title, imageData);
 
                 // retrieve the first image from the database
                 Images imageEntity = dbContext.Images.FirstOrDefault();
@@ -55,8 +56,8 @@ namespace POS
                     }
 
                     // display image in the PictureBox control
-                    pictureBoxTest.Image = image;
-                    pictureBoxTest.SizeMode = PictureBoxSizeMode.Zoom; // You can adjust the size mode as needed
+                    //pictureBoxTest.Image = image;
+                    //pictureBoxTest.SizeMode = PictureBoxSizeMode.Zoom; // You can adjust the size mode as needed
                 }
             }
         }
@@ -82,20 +83,23 @@ namespace POS
 
         private void DisplayAllImages()
         {
-            // retrieve all images from the database, ordered by ImageId
-            var images = dbContext.Images.OrderBy(img => img.ImageId).ToList();
+            // retrieve all items from the database, ordered by ItemId
+            var Items = dbContext.Items.OrderBy(x => x.ItemId).ToList();
+
+            listView1.LargeImageList = new ImageList { ImageSize = new Size(150, 150) };
 
             // foreach loop to display all menu items
-            foreach (var imageEntity in images)
+            foreach (var itemEntity in Items)
             {
                 // convert the binary image data to an image
                 Image image;
-                using (MemoryStream ms = new MemoryStream(imageEntity.ImageData))
+                var imageDataVar = dbContext.Images.Where(x => x.ImageId == itemEntity.ImageId).First(); // get image of item by ImageId
+                using (MemoryStream ms = new MemoryStream(imageDataVar.ImageData))
                 {
                     image = Image.FromStream(ms);
                 }
 
-                // create a PictureBox for each image
+                // create a PictureBox for the item image
                 PictureBox pictureBox = new PictureBox
                 {
                     Image = image,
@@ -105,43 +109,62 @@ namespace POS
                     BorderStyle = BorderStyle.FixedSingle
                 };
 
-                // Create a label for item name
+                // create a label for item name
                 Label itemName = new Label
                 {
-                    Text = imageEntity.Title,
+                    Text = itemEntity.ItemName,
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Segoe UI", 15, FontStyle.Bold),
+                    Font = new Font("Segoe UI", 10, FontStyle.Bold),
                     AutoSize = false,
-                    Width = 100, 
-                    Height = 40, 
+                    Width = 100,
+                    Height = 40,
                     Dock = DockStyle.Bottom
                 };
 
-                // Create a label for item price
+                // create a label for item price
                 Label itemPrice = new Label
                 {
-                    Text = "$3.99",
+                    Text = itemEntity.Price.ToString(),
                     TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Segoe UI", 14, FontStyle.Regular),
+                    Font = new Font("Segoe UI", 12, FontStyle.Regular),
                     AutoSize = false,
                     Width = 100,
                     Height = 20,
                     Dock = DockStyle.Bottom
                 };
 
-                // Create a container (e.g., Panel) to hold the PictureBox and Label
+                // label acting as a divider between each item
+                Label divider = new Label
+                {
+                    BorderStyle = BorderStyle.Fixed3D,
+                    Width = 3,
+                    Height = pictureBox.Height + itemName.Height + itemPrice.Height  // Adjust the divider height to match panel
+                };
+
+                // create a panel to hold the item contents
                 Panel panel = new Panel
                 {
                     Width = 150,
                     Height = 200
-                }
-                ;
+                };
+
+                // add all contents of the item to the panel
                 panel.Controls.Add(pictureBox);
                 panel.Controls.Add(itemName);
                 panel.Controls.Add(itemPrice);
 
-                // Add the PictureBox to a container or directly to the form
-                flowLayoutPanel1.Controls.Add(panel);
+                // Add the image to the LargeImageList
+                listView1.LargeImageList.Images.Add(itemEntity.ItemName.ToString(), image);
+
+                // Create a ListViewItem for each image
+                ListViewItem listItem = new ListViewItem(itemEntity.ItemName.ToString() + "\n" +itemEntity.Price.ToString() +" BD")
+                {
+                    ImageKey = itemEntity.ItemName,
+                };
+
+                // Add the ListViewItem to the ListView
+                listView1.Items.Add(listItem);
+
             }
         }
     }

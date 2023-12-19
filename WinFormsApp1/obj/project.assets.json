@@ -2019,11 +2019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\WinFormsApp1\\POS.csproj",
+      "projectUniqueName": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\CMS-IT-Project\\WinFormsApp1\\POS.csproj",
       "projectName": "POS",
-      "projectPath": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\WinFormsApp1\\POS.csproj",
+      "projectPath": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\CMS-IT-Project\\WinFormsApp1\\POS.csproj",
       "packagesPath": "C:\\Users\\mohN1080P\\.nuget\\packages\\",
-      "outputPath": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\WinFormsApp1\\obj\\",
+      "outputPath": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\CMS-IT-Project\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

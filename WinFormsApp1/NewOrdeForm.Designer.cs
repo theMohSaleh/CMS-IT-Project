@@ -44,7 +44,7 @@
             groupBox2.Controls.Add(groupBox1);
             groupBox2.Location = new Point(12, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(1295, 608);
+            groupBox2.Size = new Size(1010, 541);
             groupBox2.TabIndex = 40;
             groupBox2.TabStop = false;
             groupBox2.Text = "Order Info";
@@ -53,9 +53,9 @@
             // 
             groupBox3.BackColor = SystemColors.ControlLight;
             groupBox3.Controls.Add(label2);
-            groupBox3.Location = new Point(975, 37);
+            groupBox3.Location = new Point(732, 37);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(297, 540);
+            groupBox3.Size = new Size(278, 498);
             groupBox3.TabIndex = 43;
             groupBox3.TabStop = false;
             // 
@@ -63,7 +63,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(6, 479);
+            label2.Location = new Point(6, 465);
             label2.Name = "label2";
             label2.Size = new Size(73, 30);
             label2.TabIndex = 40;
@@ -74,7 +74,7 @@
             groupBox1.BackColor = SystemColors.ControlDark;
             groupBox1.Location = new Point(13, 37);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(956, 540);
+            groupBox1.Size = new Size(713, 498);
             groupBox1.TabIndex = 39;
             groupBox1.TabStop = false;
             groupBox1.Text = "Menu";
@@ -84,7 +84,7 @@
             addBTN.BackColor = Color.FromArgb(1, 90, 132);
             addBTN.FlatStyle = FlatStyle.Flat;
             addBTN.ForeColor = Color.White;
-            addBTN.Location = new Point(1109, 626);
+            addBTN.Location = new Point(824, 559);
             addBTN.Name = "addBTN";
             addBTN.Size = new Size(98, 35);
             addBTN.TabIndex = 41;
@@ -93,7 +93,7 @@
             // 
             // BackBTN
             // 
-            BackBTN.Location = new Point(1213, 626);
+            BackBTN.Location = new Point(928, 559);
             BackBTN.Name = "BackBTN";
             BackBTN.Size = new Size(94, 35);
             BackBTN.TabIndex = 42;
@@ -105,11 +105,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1319, 671);
+            ClientSize = new Size(1034, 606);
             Controls.Add(BackBTN);
             Controls.Add(addBTN);
             Controls.Add(groupBox2);
-            MinimumSize = new Size(1335, 710);
+            MinimumSize = new Size(1050, 645);
             Name = "New_Order";
             Text = "New Order";
             Load += New_Order_Load;

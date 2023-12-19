@@ -28,76 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            imageBtn = new Button();
             openFileDialog1 = new OpenFileDialog();
-            imageTitleTxt = new TextBox();
-            pictureBoxTest = new PictureBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTest).BeginInit();
+            listView1 = new ListView();
             SuspendLayout();
-            // 
-            // imageBtn
-            // 
-            imageBtn.Location = new Point(1194, 526);
-            imageBtn.Name = "imageBtn";
-            imageBtn.Size = new Size(75, 23);
-            imageBtn.TabIndex = 0;
-            imageBtn.Text = "img";
-            imageBtn.UseVisualStyleBackColor = true;
-            imageBtn.Click += imageBtn_Click;
             // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // imageTitleTxt
+            // listView1
             // 
-            imageTitleTxt.Location = new Point(1182, 400);
-            imageTitleTxt.Name = "imageTitleTxt";
-            imageTitleTxt.Size = new Size(100, 23);
-            imageTitleTxt.TabIndex = 1;
-            // 
-            // pictureBoxTest
-            // 
-            pictureBoxTest.Location = new Point(737, 12);
-            pictureBoxTest.Name = "pictureBoxTest";
-            pictureBoxTest.Size = new Size(439, 459);
-            pictureBoxTest.TabIndex = 2;
-            pictureBoxTest.TabStop = false;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.AutoSize = true;
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1319, 671);
-            flowLayoutPanel1.TabIndex = 3;
+            listView1.Dock = DockStyle.Fill;
+            listView1.FullRowSelect = true;
+            listView1.Location = new Point(0, 0);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(1034, 606);
+            listView1.TabIndex = 3;
+            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // MenuItemsFrm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1319, 671);
-            Controls.Add(flowLayoutPanel1);
-            Controls.Add(pictureBoxTest);
-            Controls.Add(imageTitleTxt);
-            Controls.Add(imageBtn);
-            MinimumSize = new Size(1335, 710);
+            ClientSize = new Size(1034, 606);
+            Controls.Add(listView1);
             Name = "MenuItemsFrm";
             Text = "MenuItemsFrm";
             Load += MenuItemsFrm_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBoxTest).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button imageBtn;
         private OpenFileDialog openFileDialog1;
-        private TextBox imageTitleTxt;
-        private PictureBox pictureBoxTest;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private ListView listView1;
     }
 }
