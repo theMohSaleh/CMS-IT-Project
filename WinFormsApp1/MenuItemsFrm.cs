@@ -28,7 +28,7 @@ namespace POS
         private void MenuItemsFrm_Load(object sender, EventArgs e)
         {
             // display all menu items upon loading the page
-            DisplayAllImages();
+            DisplayAllItems();
         }
 
         // this is purely for testing purposes.
@@ -81,7 +81,7 @@ namespace POS
             }
         }
 
-        private void DisplayAllImages()
+        private void DisplayAllItems()
         {
             // retrieve all items from the database, ordered by ItemId
             var Items = dbContext.Items.OrderBy(x => x.ItemId).ToList();
@@ -99,73 +99,48 @@ namespace POS
                     image = Image.FromStream(ms);
                 }
 
-                // create a PictureBox for the item image
-                PictureBox pictureBox = new PictureBox
-                {
-                    Image = image,
-                    SizeMode = PictureBoxSizeMode.Zoom,
-                    Width = 150,
-                    Height = 150,
-                    BorderStyle = BorderStyle.FixedSingle
-                };
-
-                // create a label for item name
-                Label itemName = new Label
-                {
-                    Text = itemEntity.ItemName,
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Segoe UI", 10, FontStyle.Bold),
-                    AutoSize = false,
-                    Width = 100,
-                    Height = 40,
-                    Dock = DockStyle.Bottom
-                };
-
-                // create a label for item price
-                Label itemPrice = new Label
-                {
-                    Text = itemEntity.Price.ToString(),
-                    TextAlign = ContentAlignment.MiddleCenter,
-                    Font = new Font("Segoe UI", 12, FontStyle.Regular),
-                    AutoSize = false,
-                    Width = 100,
-                    Height = 20,
-                    Dock = DockStyle.Bottom
-                };
-
-                // label acting as a divider between each item
-                Label divider = new Label
-                {
-                    BorderStyle = BorderStyle.Fixed3D,
-                    Width = 3,
-                    Height = pictureBox.Height + itemName.Height + itemPrice.Height  // Adjust the divider height to match panel
-                };
-
-                // create a panel to hold the item contents
-                Panel panel = new Panel
-                {
-                    Width = 150,
-                    Height = 200
-                };
-
-                // add all contents of the item to the panel
-                panel.Controls.Add(pictureBox);
-                panel.Controls.Add(itemName);
-                panel.Controls.Add(itemPrice);
-
                 // Add the image to the LargeImageList
                 listView1.LargeImageList.Images.Add(itemEntity.ItemName.ToString(), image);
 
                 // Create a ListViewItem for each image
-                ListViewItem listItem = new ListViewItem(itemEntity.ItemName.ToString() + "\n" +itemEntity.Price.ToString() +" BD")
+                ListViewItem listItem = new ListViewItem(itemEntity.ItemName + "\n" + itemEntity.Price.ToString() + " BD")
                 {
                     ImageKey = itemEntity.ItemName,
+                    Tag = itemEntity
                 };
 
                 // Add the ListViewItem to the ListView
                 listView1.Items.Add(listItem);
 
             }
+        }
+
+        // event to get details of item selected
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            System.Windows.Forms.ListView listView = (System.Windows.Forms.ListView)sender;
+
+            // Get the item that was clicked
+            ListViewItem clickedItem = listView.GetItemAt(e.X, e.Y);
+
+            if (clickedItem != null)
+            {
+                // create item object of selected item
+                Item currentItem = (Item)clickedItem.Tag;
+
+                // test 
+                MessageBox.Show($"Item ID: {currentItem.ItemId}\nTitle: {currentItem.ItemName}\nPrice: {currentItem.Price} BD");
+
+                // remove focus after selecting item
+                label1.Focus();
+            }
+        }
+
+        private void MenuItemsFrm_Resize(object sender, EventArgs e)
+        {
+            listView1.Width = ClientSize.Width;
+            listView1.Height = ClientSize.Height;
         }
     }
 }
