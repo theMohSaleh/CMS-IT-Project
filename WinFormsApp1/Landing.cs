@@ -1,4 +1,6 @@
-﻿using POS;
+﻿using Microsoft.EntityFrameworkCore;
+using POS;
+using POS.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,7 @@ namespace WinFormsApp1
     public partial class Landing : Form
     {
         // properties
+        private ProjectDBContext dbContext;
         private Button currentButton;
         private Random random;
         private int tempIndex;
@@ -23,6 +26,7 @@ namespace WinFormsApp1
         public Landing()
         {
             InitializeComponent();
+            dbContext = new ProjectDBContext();
             random = new Random();
             btnCloseForm.Visible = false; // hide button that closes forms displayed over landing form as there are none being displayed upon starting the application
         }
@@ -565,6 +569,48 @@ namespace WinFormsApp1
         private void pictureBox13_MouseLeave(object sender, EventArgs e)
         {
             tableNo12Pnl.BackColor = tempColor;
+        }
+
+        // test event for adding pictures
+        private void img_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string title = imgTxtBox.Text;
+                byte[] imageData = File.ReadAllBytes(openFileDialog.FileName);
+
+                SaveImage(title, imageData);
+
+                MessageBox.Show("Added " + title + " successfully.");
+            }
+        }
+
+        public void SaveImage(string title, byte[] imageData)
+        {
+            // set title and imagedata of new image
+            Images newImage = new Images
+            {
+                Title = title,
+                ImageData = imageData
+            };
+
+            // add the entity to the context
+            dbContext.Images.Add(newImage);
+
+            // save changes to the database
+            dbContext.SaveChanges();
+        }
+
+        private void tableNo1Pnl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("lol");
         }
     }
 }

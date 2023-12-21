@@ -81,5 +81,28 @@ namespace WinFormsApp1
 
             }
         }
+
+        private void addBTN_Click(object sender, EventArgs e)
+        {
+            CreateNewOrder();
+        }
+
+        private void CreateNewOrder()
+        {
+            // get and store order info in variables
+            int tableNo;
+            float totalPrice;
+            
+
+            // create order object
+
+            
+            // add order object to database
+
+
+            // update db
+
+
+        }
     }
 }

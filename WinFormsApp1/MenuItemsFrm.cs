@@ -62,31 +62,14 @@ namespace POS
             }
         }
 
-        public void SaveImage(string title, byte[] imageData)
-        {
-            using (dbContext)
-            {
-                // set title and imagedata of new image
-                Images newImage = new Images
-                {
-                    Title = title,
-                    ImageData = imageData
-                };
-
-                // add the entity to the context
-                dbContext.Images.Add(newImage);
-
-                // save changes to the database
-                dbContext.SaveChanges();
-            }
-        }
+        
 
         private void DisplayAllItems()
         {
             // retrieve all items from the database, ordered by ItemId
             var Items = dbContext.Items.OrderBy(x => x.ItemId).ToList();
 
-            listView1.LargeImageList = new ImageList { ImageSize = new Size(150, 150) };
+            listView1.LargeImageList = new ImageList { ImageSize = new Size(200, 200) };
 
             // foreach loop to display all menu items
             foreach (var itemEntity in Items)
@@ -121,7 +104,7 @@ namespace POS
 
             System.Windows.Forms.ListView listView = (System.Windows.Forms.ListView)sender;
 
-            // Get the item that was clicked
+            // Get the select iten from listview
             ListViewItem clickedItem = listView.GetItemAt(e.X, e.Y);
 
             if (clickedItem != null)
@@ -130,7 +113,7 @@ namespace POS
                 Item currentItem = (Item)clickedItem.Tag;
 
                 // test 
-                MessageBox.Show($"Item ID: {currentItem.ItemId}\nTitle: {currentItem.ItemName}\nPrice: {currentItem.Price} BD");
+                MessageBox.Show($"Item ID: {currentItem.ItemId}\nTitle: {currentItem.ItemName}\nDescription: {currentItem.ItemDescription} \nPrice: {currentItem.Price} BD");
 
                 // remove focus after selecting item
                 label1.Focus();
