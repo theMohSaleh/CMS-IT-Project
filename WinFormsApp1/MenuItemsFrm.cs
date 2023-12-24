@@ -101,7 +101,6 @@ namespace POS
         // event to get details of item selected
         private void listView1_MouseClick(object sender, MouseEventArgs e)
         {
-
             System.Windows.Forms.ListView listView = (System.Windows.Forms.ListView)sender;
 
             // Get the select iten from listview

@@ -22,6 +22,7 @@ namespace WinFormsApp1
         private int tempIndex;
         private Form currentForm;
         private Color tempColor;
+        private List<Panel> tablePanels;
 
         public Landing()
         {
@@ -29,6 +30,35 @@ namespace WinFormsApp1
             dbContext = new ProjectDBContext();
             random = new Random();
             btnCloseForm.Visible = false; // hide button that closes forms displayed over landing form as there are none being displayed upon starting the application
+            // get all tables panels in list
+            tablePanels = new List<Panel>
+        {
+            tableNo1Pnl,
+            tableNo2Pnl,
+            tableNo3Pnl,
+            tableNo4Pnl,
+            tableNo5Pnl,
+            tableNo6Pnl,
+            tableNo7Pnl,
+            tableNo8Pnl,
+            tableNo9Pnl,
+            tableNo10Pnl,
+            tableNo11Pnl,
+            tableNo12Pnl
+        };
+            // assign the order create button for all tables
+            tableNo1Pnl.Tag = btnNewOrder;
+            tableNo2Pnl.Tag = btnNewOrder;
+            tableNo3Pnl.Tag = btnNewOrder;
+            tableNo4Pnl.Tag = btnNewOrder;
+            tableNo5Pnl.Tag = btnNewOrder;
+            tableNo6Pnl.Tag = btnNewOrder;
+            tableNo7Pnl.Tag = btnNewOrder;
+            tableNo8Pnl.Tag = btnNewOrder;
+            tableNo9Pnl.Tag = btnNewOrder;
+            tableNo10Pnl.Tag = btnNewOrder;
+            tableNo11Pnl.Tag = btnNewOrder;
+            tableNo12Pnl.Tag = btnNewOrder;
         }
 
         // method to select a random color
@@ -95,8 +125,10 @@ namespace WinFormsApp1
                 // close the current form
                 currentForm.Close();
             }
+
             // highlight button
             ActivateButton(btnSender);
+
             // set new form
             currentForm = form;
             // style elements
@@ -114,7 +146,7 @@ namespace WinFormsApp1
         // display new orders form event
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
-            OpenForm(new New_Order(), sender);
+            OpenForm(new NewOrder(), sender);
         }
 
         // display current unpaid orders form event
@@ -138,15 +170,14 @@ namespace WinFormsApp1
                 // close the form and call reset method
                 currentForm.Close();
                 Reset();
+                UpdateTables();
             }
         }
 
         private void Landing_Load(object sender, EventArgs e)
         {
-
+            UpdateTables();
         }
-
-
 
         private void Reset()
         {
@@ -159,416 +190,167 @@ namespace WinFormsApp1
             currentButton = null;
             // hide close button
             btnCloseForm.Visible = false;
+
+            UpdateTables();
         }
 
         // method to set colors for tables in landing page
-        private void TableColors()
-        {
-
-        }
-
-
-        // method to display order of table clicked on
-        private void TableClicked(int tableNo)
-        {
-
-        }
-
-        // following events are only for changing color of controls
-        private void tableNo1Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo1Pnl.BackColor;
-            tableNo1Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo1Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo1Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo1Pnl.BackColor = tempColor;
-        }
-
-        private void label2_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo1Pnl.BackColor;
-            tableNo1Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo1Pnl.BackColor, -0.1);
-        }
-
-        private void label2_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo1Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox1_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo1Pnl.BackColor;
-            tableNo1Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo1Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo1Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo2Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo2Pnl.BackColor;
-            tableNo2Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo2Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo2Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo2Pnl.BackColor = tempColor;
-        }
-
-        private void label3_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo2Pnl.BackColor;
-            tableNo2Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo2Pnl.BackColor, -0.1);
-        }
-
-        private void label3_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo2Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox2_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo2Pnl.BackColor;
-            tableNo2Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo2Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo2Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo3Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo3Pnl.BackColor;
-            tableNo3Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo3Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo3Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo3Pnl.BackColor = tempColor;
-        }
-
-        private void label4_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo3Pnl.BackColor;
-            tableNo3Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo3Pnl.BackColor, -0.1);
-        }
-
-        private void label4_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo3Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox3_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo3Pnl.BackColor;
-            tableNo3Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo3Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo3Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo4Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo4Pnl.BackColor;
-            tableNo4Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo4Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo4Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo4Pnl.BackColor = tempColor;
-        }
-
-        private void label5_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo4Pnl.BackColor;
-            tableNo4Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo4Pnl.BackColor, -0.1);
-        }
-
-        private void label5_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo4Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox4_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo4Pnl.BackColor;
-            tableNo4Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo4Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox4_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo4Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo5Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo5Pnl.BackColor;
-            tableNo5Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo5Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo5Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo5Pnl.BackColor = tempColor;
-        }
-
-        private void label6_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo5Pnl.BackColor;
-            tableNo5Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo5Pnl.BackColor, -0.1);
-        }
-
-        private void label6_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo5Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox5_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo5Pnl.BackColor;
-            tableNo5Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo5Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox5_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo5Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo6Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo6Pnl.BackColor;
-            tableNo6Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo6Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo6Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo6Pnl.BackColor = tempColor;
-        }
-
-        private void label7_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo6Pnl.BackColor;
-            tableNo6Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo6Pnl.BackColor, -0.1);
-        }
-
-        private void label7_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo6Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox6_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo6Pnl.BackColor;
-            tableNo6Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo6Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox6_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo6Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo7Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo7Pnl.BackColor;
-            tableNo7Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo7Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo7Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo7Pnl.BackColor = tempColor;
-        }
-
-        private void label8_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo7Pnl.BackColor;
-            tableNo7Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo7Pnl.BackColor, -0.1);
-        }
-
-        private void label8_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo7Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox7_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo7Pnl.BackColor;
-            tableNo7Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo7Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox7_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo7Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo8Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo8Pnl.BackColor;
-            tableNo8Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo8Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo8Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo8Pnl.BackColor = tempColor;
-        }
-
-        private void label9_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo8Pnl.BackColor;
-            tableNo8Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo8Pnl.BackColor, -0.1);
-        }
-
-        private void label9_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo8Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox8_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo8Pnl.BackColor;
-            tableNo8Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo8Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox8_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo8Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo9Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo9Pnl.BackColor;
-            tableNo9Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo9Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo9Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo9Pnl.BackColor = tempColor;
-        }
-
-        private void label18_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo9Pnl.BackColor;
-            tableNo9Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo9Pnl.BackColor, -0.1);
-        }
-
-        private void label18_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo9Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox16_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo9Pnl.BackColor;
-            tableNo9Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo9Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox16_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo9Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo10Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo10Pnl.BackColor;
-            tableNo10Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo10Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo10Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo10Pnl.BackColor = tempColor;
-        }
-
-        private void label17_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo10Pnl.BackColor;
-            tableNo10Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo10Pnl.BackColor, -0.1);
-        }
-
-        private void label17_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo10Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox15_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo10Pnl.BackColor;
-            tableNo10Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo10Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox15_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo10Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo11Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo11Pnl.BackColor;
-            tableNo11Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo11Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo11Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo11Pnl.BackColor = tempColor;
-        }
-
-        private void label16_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo11Pnl.BackColor;
-            tableNo11Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo11Pnl.BackColor, -0.1);
-        }
-
-        private void label16_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo11Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox14_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo11Pnl.BackColor;
-            tableNo11Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo11Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox14_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo11Pnl.BackColor = tempColor;
-        }
-
-        private void tableNo12Pnl_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo12Pnl.BackColor;
-            tableNo12Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo12Pnl.BackColor, -0.1);
-        }
-
-        private void tableNo12Pnl_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo12Pnl.BackColor = tempColor;
-        }
-
-        private void label15_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo12Pnl.BackColor;
-            tableNo12Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo12Pnl.BackColor, -0.1);
-        }
-
-        private void label15_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo12Pnl.BackColor = tempColor;
-        }
-
-        private void pictureBox13_MouseEnter(object sender, EventArgs e)
-        {
-            tempColor = tableNo12Pnl.BackColor;
-            tableNo12Pnl.BackColor = ThemeColor.ChangeColorBrightness(tableNo12Pnl.BackColor, -0.1);
-        }
-
-        private void pictureBox13_MouseLeave(object sender, EventArgs e)
-        {
-            tableNo12Pnl.BackColor = tempColor;
+        public void UpdateTables()
+        {
+            // get all current table orders info
+            var tableOrders = dbContext.Orders.Where(x => x.TableNumber > 0 || x.IsPaid == 0).ToList();
+
+            // check if any tables were found
+            if (tableOrders.Count > 0)
+            {
+                // go though all orders found
+                foreach (Order order in tableOrders)
+                {
+                    // loop through all panels
+                    foreach (Panel panel in tablePanels)
+                    {
+                        // get panel number
+                        int panelTableNumber = TableNumber(panel);
+
+                        // check if panel's table number matches the specified tableNumber
+                        if (panelTableNumber == order.TableNumber)
+                        {
+                            // change color panel to occupied color
+                            panel.BackColor = Color.DarkOrange;
+                        }
+                        // if table order has been paid for, reset table color 
+                        else if (panelTableNumber == order.TableNumber && order.IsPaid == 1)
+                        {
+                            // reset the color of the panel
+                            panel.BackColor = Color.SkyBlue;
+                        }
+                        // Replace YourEntity and yourCondition with actual entity and condition
+                        bool doesNotExist = !dbContext.Orders.Any(x => x.TableNumber == panelTableNumber && x.IsPaid == 0);
+
+                        if (doesNotExist)
+                        {
+                            panel.BackColor = Color.SkyBlue;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // if no table was found reset all panels to default color
+                foreach (Panel panel in tablePanels)
+                {
+                    panel.BackColor = Color.SkyBlue;
+                }
+            }
+        }
+
+        // method to create or display order of table clicked on
+        private void TableClicked(int tableNo, object sender)
+        {
+            // variables
+            bool tableHasOrder = false;
+
+            // get all current table orders info
+            var tableOrders = dbContext.Orders.Where(x => x.TableNumber > 0 || x.IsPaid == 0).ToList();
+            // go through all current table orders
+            foreach (Order order in tableOrders)
+            {
+                // if the clicked on table currently has an order change bool value
+                if (order.TableNumber == tableNo)
+                {
+                    tableHasOrder = true;
+                }
+            }
+
+            // if table has no current order open new order menu
+            if (!tableHasOrder)
+            {
+                NewOrder newOrderFrm = new NewOrder(tableNo.ToString(), this);
+                OpenForm(newOrderFrm, sender);
+            }
+            else
+            {
+                PayForOrderFrm payForm = new PayForOrderFrm(tableNo);
+                DialogResult payDialog = payForm.ShowDialog();
+                if (payDialog == DialogResult.OK)
+                {
+                    UpdateTables();
+                }
+            }
+        }
+
+        // method to get table number from panel design name
+        private int TableNumber(Panel panel)
+        {
+            // variables
+            string panelName = panel.Name;
+            string prefix = "tableNo";  //prefix of panel name before number
+            string suffix = "Pnl";      //suffix of panel name before number
+
+            // extract number of table 
+            string tableNumberString = panelName.Substring(prefix.Length, panelName.Length - prefix.Length - suffix.Length);
+
+            // convert string to int 
+            int tableNumber = int.Parse(tableNumberString);
+            return tableNumber;
+        }
+
+        // decrease panel color when highlighting the panel
+        private void decreasePanelBrightness(object sender, EventArgs e)
+        {
+            if (sender is Panel tablePanel)
+            {
+                tempColor = tablePanel.BackColor;
+                // Modify the properties of the parent panel
+                tablePanel.BackColor = ThemeColor.ChangeColorBrightness(tablePanel.BackColor, -0.1);
+            }
+            // Cast the sender to the Label type
+            if (sender is Label label)
+            {
+                // Access the parent control (assumed to be a Panel)
+                if (label.Parent is Panel currentTablePanel)
+                {
+                    tempColor = currentTablePanel.BackColor;
+                    // Modify the properties of the parent panel
+                    currentTablePanel.BackColor = ThemeColor.ChangeColorBrightness(currentTablePanel.BackColor, -0.1);
+                }
+            }
+            if (sender is PictureBox tableImage)
+            {
+                // Access the parent control (assumed to be a Panel)
+                if (tableImage.Parent is Panel currentTablePanel)
+                {
+                    tempColor = currentTablePanel.BackColor;
+                    // Modify the properties of the parent panel
+                    currentTablePanel.BackColor = ThemeColor.ChangeColorBrightness(currentTablePanel.BackColor, -0.1);
+                }
+            }
+        }
+
+        // restore panel color to original state when not hovering anymore
+        private void restorePanelBrightness(object sender, EventArgs e)
+        {
+            if (sender is Panel tablePanel)
+            {
+                tablePanel.BackColor = tempColor;
+            }
+            // Cast the sender to the Label type
+            if (sender is Label label)
+            {
+                // Access the parent control 
+                if (label.Parent is Panel currentTablePanel)
+                {
+                    currentTablePanel.BackColor = tempColor;
+                }
+            }
+            if (sender is PictureBox tableImage)
+            {
+                // Access the parent control 
+                if (tableImage.Parent is Panel currentTablePanel)
+                {
+                    currentTablePanel.BackColor = tempColor;
+                }
+            }
         }
 
         // test event for adding pictures
@@ -603,14 +385,43 @@ namespace WinFormsApp1
             dbContext.SaveChanges();
         }
 
-        private void tableNo1Pnl_Click(object sender, EventArgs e)
+        // call the tableclicked method and pass in the table numeber respective to the table clicked
+        private void tablePanelClicked(object sender, EventArgs e)
         {
+            int tableClickedNumber;
+            if (sender is Panel tablePanel)
+            {
+                if (tablePanel != null && tablePanel.Tag is Button associatedButton)
+                {
+                    tableClickedNumber = TableNumber(tablePanel);
+                    TableClicked(tableClickedNumber, associatedButton);
+                }
+            }
+            if (sender is Label tableLabel)
+            {
+                // Access the parent control 
+                if (tableLabel.Parent is Panel currentTablePanel)
+                {
+                    if (currentTablePanel != null && currentTablePanel.Tag is Button associatedButton)
+                    {
+                        tableClickedNumber = TableNumber(currentTablePanel);
+                        TableClicked(tableClickedNumber, associatedButton);
+                    }
+                }
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("lol");
+            }
+            if (sender is PictureBox tablePicture)
+            {
+                // Access the parent control 
+                if (tablePicture.Parent is Panel currentTablePanel)
+                {
+                    if (currentTablePanel != null && currentTablePanel.Tag is Button associatedButton)
+                    {
+                        tableClickedNumber = TableNumber(currentTablePanel);
+                        TableClicked(tableClickedNumber, associatedButton);
+                    }
+                }
+            }
         }
     }
 }

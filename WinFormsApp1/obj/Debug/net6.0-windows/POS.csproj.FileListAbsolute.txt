@@ -147,7 +147,6 @@ F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.CurrentOrdersFrm.resources
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Landing.resources
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.MenuItemsFrm.resources
-F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.New_Order.resources
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.Properties.Resources.resources
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.csproj.GenerateResource.cache
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.GeneratedMSBuildEditorConfig.editorconfig
@@ -216,3 +215,6 @@ C:\Users\Mohamed Saleh\Documents\GitHub\CMS-IT-Project\WinFormsApp1\obj\Debug\ne
 C:\Users\Mohamed Saleh\Documents\GitHub\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.genruntimeconfig.cache
 C:\Users\Mohamed Saleh\Documents\GitHub\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\ref\POS.dll
 C:\Users\Mohamed Saleh\Documents\GitHub\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.TableOrderFrm.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.TableOrderFrm.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.NewOrder.resources
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.PayForOrderFrm.resources

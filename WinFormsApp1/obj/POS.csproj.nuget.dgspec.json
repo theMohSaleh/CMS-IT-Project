@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mohamed Saleh\\Documents\\GitHub\\CMS-IT-Project\\WinFormsApp1\\POS.csproj": {}
+    "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\CMS-IT-Project\\WinFormsApp1\\POS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mohamed Saleh\\Documents\\GitHub\\CMS-IT-Project\\WinFormsApp1\\POS.csproj": {
+    "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\CMS-IT-Project\\WinFormsApp1\\POS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohamed Saleh\\Documents\\GitHub\\CMS-IT-Project\\WinFormsApp1\\POS.csproj",
+        "projectUniqueName": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\CMS-IT-Project\\WinFormsApp1\\POS.csproj",
         "projectName": "POS",
-        "projectPath": "C:\\Users\\Mohamed Saleh\\Documents\\GitHub\\CMS-IT-Project\\WinFormsApp1\\POS.csproj",
-        "packagesPath": "C:\\Users\\Mohamed Saleh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohamed Saleh\\Documents\\GitHub\\CMS-IT-Project\\WinFormsApp1\\obj\\",
+        "projectPath": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\CMS-IT-Project\\WinFormsApp1\\POS.csproj",
+        "packagesPath": "C:\\Users\\mohN1080P\\.nuget\\packages\\",
+        "outputPath": "F:\\PolyTechnic\\2023-2024 Year\\IT7099 IT Project\\Project\\Project1\\CMS-IT-Project\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Mohamed Saleh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mohN1080P\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,7 +78,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
