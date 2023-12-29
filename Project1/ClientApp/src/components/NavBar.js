@@ -13,6 +13,7 @@ export default function NavBar() {
     React.useEffect(() => {
         console.log('isLoggedIn changed:', isLoggedIn);
         renderAuthLinks()
+        adminLinks()
     }, []);
 
     function renderAuthLinks() {
@@ -20,7 +21,10 @@ export default function NavBar() {
         if (isLoggedIn == true) {
             console.log('Logout is being called');
             return (
-                <button className="btn btn-link px-3 me-2" onClick={onLogout} to="/login">Logout</button>
+                <>
+                    <Link className="btn btn-primary me-3" to="/cart">Cart</Link>
+                    <button className="btn btn-link px-3 me-2" onClick={onLogout} to="/login">Logout</button>
+                </>
             );
         } else {
             console.log('login is being called');
@@ -33,9 +37,31 @@ export default function NavBar() {
         }
     }
 
+    function adminLinks() {
+
+        const userRole = window.sessionStorage.getItem('roleID')
+        console.log('User Role: ', userRole);
+        if (userRole == 2) {
+            
+            return (
+                <>
+                    <Link className="btn btn-link px-3 me-2" to="/login">Modify Menu</Link>
+                    <Link className="btn btn-primary me-3" to="/register">Add User</Link>
+                    <Link className="btn btn-link px-3 me-2" to="/login">View Sales</Link>
+                </>
+            );
+        } else {
+            return (
+                <>
+                </>
+            );
+        }
+    }
+
     function onLogout() {
         window.sessionStorage.setItem('isLoggedIn', false)
         setIsLoggedIn(false)
+        window.sessionStorage.clear();
     }
 
     return (
@@ -66,6 +92,9 @@ export default function NavBar() {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/items">Menu</Link>
+                        </li>
+                        <li className="nav-item">
+                            {adminLinks()}
                         </li>
                     </ul>
                     <div className="d-flex align-items-center">

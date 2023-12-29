@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace CMSWebpage.Models
+namespace CMSWebpage.Model
 {
     public partial class ProjectDBContext : DbContext
     {
@@ -20,6 +20,7 @@ namespace CMSWebpage.Models
         public virtual DbSet<Image> Images { get; set; } = null!;
         public virtual DbSet<Item> Items { get; set; } = null!;
         public virtual DbSet<Order> Orders { get; set; } = null!;
+        public virtual DbSet<OrderCart> OrderCarts { get; set; } = null!;
         public virtual DbSet<OrderItem> OrderItems { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
 
@@ -60,6 +61,21 @@ namespace CMSWebpage.Models
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK_Orders_Users");
+            });
+
+            modelBuilder.Entity<OrderCart>(entity =>
+            {
+                entity.HasOne(d => d.Item)
+                    .WithMany()
+                    .HasForeignKey(d => d.ItemId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_OrderCart_Items");
+
+                entity.HasOne(d => d.User)
+                    .WithMany()
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_OrderCart_Users");
             });
 
             modelBuilder.Entity<OrderItem>(entity =>

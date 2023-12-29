@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace CMSWebpage.Models
+namespace CMSWebpage.Model
 {
     public partial class User
     {
@@ -20,7 +20,6 @@ namespace CMSWebpage.Models
         public string Name { get; set; } = null!;
         [StringLength(50)]
         public string Email { get; set; } = null!;
-        [StringLength(int.MaxValue)]
         public string Password { get; set; } = null!;
         [StringLength(50)]
         public string? Office { get; set; }

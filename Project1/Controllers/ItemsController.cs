@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CMSWebpage.Models;
+using CMSWebpage.Model;
 
 namespace CMSWebpage.Controllers
 {

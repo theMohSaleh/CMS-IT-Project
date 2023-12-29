@@ -53,13 +53,22 @@ export default function Login() {
             if (response.ok) {
                 // Login successful
                 const pass = await response.json();
-                console.log(pass);
+                let userRole;
+
+                console.log(pass)
+
                 if (pass == true) {
-                    setUser()
+                    fetch(`/api/users/getRole/${userLogin.email}`)
+                        .then(response => {
+                            return response;
+                        })
+                        .then(data => userRole = data)
+                        .catch(error => console.error('Error fetching user role:', error));
+                    console.log("roleID:", user.role);
                     window.sessionStorage.setItem('isLoggedIn', true);
                     window.sessionStorage.setItem('userID', user.userId);
-                    navigate(0);
-                    return navigate(`/`);
+                    window.sessionStorage.setItem('roleID', 2);
+                    //navigate(0);
                     
                 } else {
                     setShowAlert(true);

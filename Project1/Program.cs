@@ -1,4 +1,4 @@
-using CMSWebpage.Models;
+using CMSWebpage.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

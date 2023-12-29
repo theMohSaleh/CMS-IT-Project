@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using CMSWebpage.Models;
+using CMSWebpage.Model;
 
 namespace CMSWebpage.Controllers
 {

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace CMSWebpage.Models
+namespace CMSWebpage.Model
 {
     public partial class Image
     {
