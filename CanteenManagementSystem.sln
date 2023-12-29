@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSWebpage", "Project1\CMSW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS", "WinFormsApp1\POS.csproj", "{CBA9BF90-2982-42B4-A06E-34A064D71EBD}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactapp", "CMSReactWithASP\reactapp\reactapp.esproj", "{5E26C1DD-061A-4C59-8190-52FE59A2DCA5}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi", "CMSReactWithASP\webapi\webapi.csproj", "{2ECA1514-AECC-449D-9367-FB7FFAD59B16}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,16 +21,6 @@ Global
 		{CBA9BF90-2982-42B4-A06E-34A064D71EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBA9BF90-2982-42B4-A06E-34A064D71EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBA9BF90-2982-42B4-A06E-34A064D71EBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E26C1DD-061A-4C59-8190-52FE59A2DCA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E26C1DD-061A-4C59-8190-52FE59A2DCA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E26C1DD-061A-4C59-8190-52FE59A2DCA5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{5E26C1DD-061A-4C59-8190-52FE59A2DCA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E26C1DD-061A-4C59-8190-52FE59A2DCA5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E26C1DD-061A-4C59-8190-52FE59A2DCA5}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{2ECA1514-AECC-449D-9367-FB7FFAD59B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2ECA1514-AECC-449D-9367-FB7FFAD59B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2ECA1514-AECC-449D-9367-FB7FFAD59B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2ECA1514-AECC-449D-9367-FB7FFAD59B16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

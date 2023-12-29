@@ -10,7 +10,7 @@ using CMSWebpage.Models;
 namespace CMSWebpage.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class ItemsController : ControllerBase
     {
         private readonly ProjectDBContext _context;

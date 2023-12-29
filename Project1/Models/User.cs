@@ -20,6 +20,8 @@ namespace CMSWebpage.Models
         public string Name { get; set; } = null!;
         [StringLength(50)]
         public string Email { get; set; } = null!;
+        [StringLength(int.MaxValue)]
+        public string Password { get; set; } = null!;
         [StringLength(50)]
         public string? Office { get; set; }
         [StringLength(50)]

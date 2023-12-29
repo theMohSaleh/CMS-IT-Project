@@ -35,19 +35,33 @@ namespace CMSWebpage.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Image>> GetImage(int id)
         {
-          if (_context.Images == null)
-          {
-              return NotFound();
-          }
-            var image = await _context.Images.FindAsync(id);
+            var imageData = await _context.Images
+            .Where(i => i.ImageId == id)
+            .Select(i => i.ImageData)
+            .SingleOrDefaultAsync();
 
-            if (image == null)
+            if (imageData == null)
             {
-                return NotFound();
+                return NotFound(); 
             }
 
-            return image;
-        }
+            return File(imageData, "image/png"); 
+        
+
+
+        //if (_context.Images == null)
+        //{
+        //    return NotFound();
+        //}
+        //  var image = await _context.Images.FindAsync(id);
+
+        //  if (image == null)
+        //  {
+        //      return NotFound();
+        //  }
+
+        //  return image;
+    }
 
         // PUT: api/Images/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

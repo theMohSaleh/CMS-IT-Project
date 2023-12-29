@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CMSWebpage.Models;
+using System.Text;
 
 namespace CMSWebpage.Controllers
 {
@@ -15,9 +17,80 @@ namespace CMSWebpage.Controllers
     {
         private readonly ProjectDBContext _context;
 
+        public class UserLogin
+        {
+            public string Email { get; set; }
+            public string Password { get; set; }
+        }
+
+        public class UserRegister
+        {
+            public string Name { get; set; }
+            public string Email { get; set; }
+            public string Password { get; set; }
+            public string Office { get; set; }
+            public string Number { get; set; }
+            public int Role { get; set; }
+        }
+
+        string hashPassword(string password)
+        {
+            var sha = SHA256.Create();
+
+            var byteArray = Encoding.Default.GetBytes(password);
+            var hashedPassword = sha.ComputeHash(byteArray);
+
+            return Convert.ToBase64String(hashedPassword);
+        }
+
         public UsersController(ProjectDBContext context)
         {
             _context = context;
+        }
+
+        [HttpPost("reg")]
+        public async Task<IActionResult> Register([FromBody] UserRegister userRegister)
+        {
+            // hash password
+            string hashedPassword = hashPassword(userRegister.Password);
+
+            // create new user object
+            User newUser = new User
+            {
+                Name = userRegister.Name,
+                Email = userRegister.Email,
+                Password = hashedPassword,
+                Office = userRegister.Office,
+                Number = userRegister.Number,
+                Role = userRegister.Role.ToString()
+            };
+
+            // add user to DB
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+
+            // return success
+            return Ok(true);
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] UserLogin userLogin)
+        {
+            // get user info from DB
+            User user = await _context.Users.SingleOrDefaultAsync(u => u.Email == userLogin.Email);
+
+            if (user != null)
+            {
+                // confirm if user password is correct
+                if (user.Password == hashPassword(userLogin.Password))
+                {
+                    // return success
+                    return Ok(true);
+                }
+            }
+
+            // incorrect username or password
+            return Ok(false);
         }
 
         // GET: api/Users
