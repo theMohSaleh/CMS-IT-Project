@@ -46,7 +46,8 @@ export default function NavBar() {
             return (
                 <>
                     <Link className="btn btn-link px-3 me-2" to="/login">Modify Menu</Link>
-                    <Link className="btn btn-primary me-3" to="/register">Add User</Link>
+                    <Link className="btn btn-link px-3 me-2" to="/login">View Users</Link>
+                    <Link className="btn btn-primary me-3" to="/addItem">Add Item</Link>
                     <Link className="btn btn-link px-3 me-2" to="/login">View Sales</Link>
                 </>
             );

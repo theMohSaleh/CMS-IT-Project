@@ -5,6 +5,8 @@ import Menu from "./components/Menu";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Cart from "./components/Cart";
+import AddItem from "./components/AddItem"; 
+import Sales from "./components/Sales";
 
 const AppRoutes = [
     {
@@ -34,6 +36,15 @@ const AppRoutes = [
     {
         path: '/cart',
         element: <Cart />
+    },
+    {
+        path: '/addItem',
+        element: <AddItem />
+    }
+    ,
+    {
+        path: '/sales',
+        element: <Sales />
     }
 ];
 

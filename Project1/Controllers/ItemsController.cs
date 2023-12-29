@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CMSWebpage.Model;
+using static CMSWebpage.Controllers.UsersController;
 
 namespace CMSWebpage.Controllers
 {
@@ -20,6 +21,16 @@ namespace CMSWebpage.Controllers
             _context = context;
         }
 
+        public class ItemAdd
+        {
+            public int ItemID { get; set; }
+            public int CategoryId { get; set; }
+            public string ItemName { get; set; }
+            public string ItemDescription { get; set; }
+            public string Price { get; set; }
+            public string ImageData { get; set; }
+        }
+
         // GET: api/Items
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Item>>> GetItems()
@@ -28,8 +39,43 @@ namespace CMSWebpage.Controllers
             {
                 return NotFound();
             }
-            
+
             return await _context.Items.ToListAsync();
+        }
+
+        [HttpPost("addItem")]
+        public async Task<IActionResult> AddItem([FromBody] ItemAdd addedItem)
+        {
+            Console.WriteLine($"Received Image Data: {addedItem.ImageData.Length} bytes");
+
+            var imageDataBytes = Convert.FromBase64String(addedItem.ImageData);
+
+            // Save image to the Images table
+            var image = new Image
+            {
+                Title = addedItem.ItemName,
+                ImageData = imageDataBytes
+            };
+
+            _context.Images.Add(image);
+            await _context.SaveChangesAsync();
+
+            // create new user object
+            Item newItem = new Item
+            {
+                CategoryId = addedItem.CategoryId,
+                ItemName = addedItem.ItemName,
+                ItemDescription = addedItem.ItemDescription,
+                Price = double.Parse(addedItem.Price),
+                ImageId = image.ImageId
+            };
+
+            // add item to DB
+            _context.Items.Add(newItem);
+            await _context.SaveChangesAsync();
+
+            // return success
+            return Ok(true);
         }
 
         // GET: api/Items/5

@@ -1,8 +1,12 @@
 import React from 'react';
 import Alert from './Alert';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"
+
 
 export default function Register() {
+
+    const navigate = useNavigate();
 
     const [formData, setFormData] = React.useState({
         name: "",
