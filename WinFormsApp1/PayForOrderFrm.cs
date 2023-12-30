@@ -14,22 +14,37 @@ namespace POS
 {
     public partial class PayForOrderFrm : Form
     {
-        int currentTableNo;
+        int? currentTableNo;
+        int? orderID;
         Order order;
         ProjectDBContext dBContext;
-        public PayForOrderFrm(int tableNo)
+        public PayForOrderFrm(int? tableNo = 0, int? orderId = 0)
         {
             InitializeComponent();
             currentTableNo = tableNo;
+            orderID = orderId;
             dBContext = new ProjectDBContext();
         }
 
         private void PayForOrderFrm_Load(object sender, EventArgs e)
         {
-            order = dBContext.Orders.Where(x => x.TableNumber == currentTableNo && x.IsPaid == 0).FirstOrDefault()!;
+            string office = "Take Away";
+            if (orderID == 0) {
+                order = dBContext.Orders.Where(x => x.TableNumber == currentTableNo && x.IsPaid == 0).FirstOrDefault()!;
+            } else
+            {
+                order = dBContext.Orders.Where(x => x.OrderId == orderID).FirstOrDefault()!;
+            }
+            if (order.UserId != null && order.IsOccupied == 1)
+            {
+                User user = new User();
+                user = dBContext.Users.Where(x => x.UserId == order.UserId).FirstOrDefault()!;
+                office = user.Office!;
+            }
 
             tableNoTxt.Text = order.TableNumber.ToString();
             priceTxt.Text = order.TotalAmount.ToString()+" BD";
+            officeLbl.Text = office;
         }
 
         private void payBtn_Click(object sender, EventArgs e)

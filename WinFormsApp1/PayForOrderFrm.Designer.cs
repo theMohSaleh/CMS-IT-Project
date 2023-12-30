@@ -35,6 +35,8 @@
             tableNoTxt = new Label();
             priceTxt = new Label();
             backBtn = new Button();
+            officeLbl = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // payBtn
@@ -74,7 +76,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(102, 126);
+            label2.Location = new Point(102, 91);
             label2.Name = "label2";
             label2.Size = new Size(86, 21);
             label2.TabIndex = 3;
@@ -92,7 +94,7 @@
             // priceTxt
             // 
             priceTxt.AutoSize = true;
-            priceTxt.Location = new Point(246, 132);
+            priceTxt.Location = new Point(246, 97);
             priceTxt.Name = "priceTxt";
             priceTxt.Size = new Size(57, 15);
             priceTxt.TabIndex = 5;
@@ -110,11 +112,32 @@
             backBtn.UseVisualStyleBackColor = true;
             backBtn.Click += backBtn_Click;
             // 
+            // officeLbl
+            // 
+            officeLbl.AutoSize = true;
+            officeLbl.Location = new Point(246, 153);
+            officeLbl.Name = "officeLbl";
+            officeLbl.Size = new Size(53, 15);
+            officeLbl.TabIndex = 8;
+            officeLbl.Text = "officeLbl";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(102, 147);
+            label4.Name = "label4";
+            label4.Size = new Size(94, 21);
+            label4.TabIndex = 7;
+            label4.Text = "Delivery to:";
+            // 
             // PayForOrderFrm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(425, 294);
+            Controls.Add(officeLbl);
+            Controls.Add(label4);
             Controls.Add(backBtn);
             Controls.Add(priceTxt);
             Controls.Add(tableNoTxt);
@@ -138,5 +161,7 @@
         private Label tableNoTxt;
         private Label priceTxt;
         private Button backBtn;
+        private Label officeLbl;
+        private Label label4;
     }
 }

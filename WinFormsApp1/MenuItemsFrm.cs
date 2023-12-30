@@ -82,17 +82,17 @@ namespace POS
                     image = Image.FromStream(ms);
                 }
 
-                // Add the image to the LargeImageList
+                // add the image to the LargeImageList
                 listView1.LargeImageList.Images.Add(itemEntity.ItemName.ToString(), image);
 
-                // Create a ListViewItem for each image
+                // create a ListViewItem for each image
                 ListViewItem listItem = new ListViewItem(itemEntity.ItemName + "\n" + itemEntity.Price.ToString() + " BD")
                 {
                     ImageKey = itemEntity.ItemName,
                     Tag = itemEntity
                 };
 
-                // Add the ListViewItem to the ListView
+                // add the ListViewItem to the ListView
                 listView1.Items.Add(listItem);
 
             }

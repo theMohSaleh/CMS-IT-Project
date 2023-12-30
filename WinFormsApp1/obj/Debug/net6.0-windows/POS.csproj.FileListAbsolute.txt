@@ -219,3 +219,4 @@ F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.pdb
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.genruntimeconfig.cache
 F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\ref\POS.dll
+F:\PolyTechnic\2023-2024 Year\IT7099 IT Project\Project\Project1\CMS-IT-Project\WinFormsApp1\obj\Debug\net6.0-windows\POS.DisplayOrderForm.resources

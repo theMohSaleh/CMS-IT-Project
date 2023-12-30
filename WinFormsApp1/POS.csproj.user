@@ -4,6 +4,9 @@
     <Compile Update="CurrentOrdersFrm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DisplayOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Landing.cs">
       <SubType>Form</SubType>
     </Compile>
