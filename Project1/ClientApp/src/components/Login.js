@@ -5,8 +5,6 @@ import { useNavigate } from "react-router-dom"
 
 export default function Login() {
 
-    const [user, setUser] = React.useState([]);
-
     const navigate = useNavigate();
 
     const [formData, setFormData] = React.useState({
@@ -21,13 +19,6 @@ export default function Login() {
             [name]: value
         }))
     }
-
-    React.useEffect(() => {
-        fetch('/api/users')
-            .then(response => { return response.json() })
-            .then(data => setUser(data))
-            .catch(error => console.error('Error fetching users:', error))
-    }, []);
 
     const [showAlert, setShowAlert] = React.useState(false);
 
@@ -53,23 +44,20 @@ export default function Login() {
             if (response.ok) {
                 // Login successful
                 const pass = await response.json();
-                let userRole;
 
-                console.log(pass)
+                console.log("Pass: ",pass)
 
-                if (pass == true) {
-                    fetch(`/api/users/getRole/${userLogin.email}`)
-                        .then(response => {
-                            return response;
+                if (pass !== false) {
+                    fetch(`/api/users/${pass}`)
+                        .then(response => { return response.json() })
+                        .then(data => {
+                            console.log(data);
+                            window.sessionStorage.setItem('isLoggedIn', true);
+                            window.sessionStorage.setItem('userID', data.userId);
+                            window.sessionStorage.setItem('roleID', data.role);
+                            navigate(0);
                         })
-                        .then(data => userRole = data)
-                        .catch(error => console.error('Error fetching user role:', error));
-                    console.log("roleID:", user.role);
-                    window.sessionStorage.setItem('isLoggedIn', true);
-                    window.sessionStorage.setItem('userID', user.userId);
-                    window.sessionStorage.setItem('roleID', 2);
-                    //navigate(0);
-                    
+                        .catch(error => console.error('Error fetching user:', error))
                 } else {
                     setShowAlert(true);
                 }
@@ -81,7 +69,6 @@ export default function Login() {
             console.error('Error during API call:', error);
         }
     };
-
 
     return (
         <form onSubmit={handleLogin}>

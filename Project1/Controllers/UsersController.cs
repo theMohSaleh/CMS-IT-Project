@@ -85,7 +85,7 @@ namespace CMSWebpage.Controllers
                 if (user.Password == hashPassword(userLogin.Password))
                 {
                     // return success
-                    return Ok(true);
+                    return Ok(user.UserId);
                 }
             }
 
@@ -145,7 +145,7 @@ namespace CMSWebpage.Controllers
         }
 
         // GET: api/Users/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             if (_context.Users == null)

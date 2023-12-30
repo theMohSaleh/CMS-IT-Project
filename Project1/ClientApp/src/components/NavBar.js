@@ -41,14 +41,22 @@ export default function NavBar() {
 
         const userRole = window.sessionStorage.getItem('roleID')
         console.log('User Role: ', userRole);
-        if (userRole == 2) {
-            
+        if (userRole == "1") {
+
             return (
                 <>
-                    <Link className="btn btn-link px-3 me-2" to="/login">Modify Menu</Link>
-                    <Link className="btn btn-link px-3 me-2" to="/login">View Users</Link>
-                    <Link className="btn btn-primary me-3" to="/addItem">Add Item</Link>
-                    <Link className="btn btn-link px-3 me-2" to="/login">View Sales</Link>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/login">Modify Menu</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/login">View Users</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/sales">View Sales</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="btn btn-primary me-3" to="/addItem">Add Item</Link>
+                    </li>
                 </>
             );
         } else {
@@ -94,9 +102,7 @@ export default function NavBar() {
                         <li className="nav-item">
                             <Link className="nav-link" to="/items">Menu</Link>
                         </li>
-                        <li className="nav-item">
-                            {adminLinks()}
-                        </li>
+                        {adminLinks()}
                     </ul>
                     <div className="d-flex align-items-center">
                         {renderAuthLinks()}

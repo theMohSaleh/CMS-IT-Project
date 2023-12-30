@@ -1,8 +1,20 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom"
 
 export default function Menu() {
     const [items, setItems] = React.useState([]);
     const [itemImages, setItemImages] = React.useState({});
+    const navigate = useNavigate();
+
+    let isLoggedIn = window.sessionStorage.getItem("isLoggedIn")
+
+    React.useEffect(() => {
+        if (isLoggedIn === "true") {
+            
+        } else {
+            navigate("/")
+        }
+    }, []);
 
     React.useEffect(() => {
         fetch('/api/items')
@@ -12,7 +24,6 @@ export default function Menu() {
     }, []);
 
     React.useEffect(() => {
-        // Fetch images for each item
         const fetchItemImages = async () => {
             const imagePromises = items.map(async item => {
                 const imageId = item.imageId;
@@ -51,8 +62,43 @@ export default function Menu() {
         fetchItemImages();
     }, [items]);
 
+    const handleSubmit = async (event, itemId) => {
+        event.preventDefault();
+
+        if (isLoggedIn === "true") {
+
+            const newCart = {
+                userId: window.sessionStorage.getItem("userID"),
+                ItemId: itemId.toString()
+            };
+
+            console.log("cart",newCart)
+
+            try {
+                const response = await fetch('/api/orderCart/cart', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newCart),
+                });
+
+                if (response.ok) {
+                    // add successful
+                    window.alert('Item added to cart!');
+                } else {
+                    console.error('Adding cart failed:', response.status, response.statusText);
+                }
+            } catch (error) {
+                console.error('Error during API call:', error);
+            }
+        } else {
+            window.alert('Please login first!');
+        }
+    }
+
     return (
-        <div>
+        <form onSubmit={handleSubmit}>
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {items.map(item => (
                     <div key={item.itemId} className="col">
@@ -69,11 +115,12 @@ export default function Menu() {
                                     {item.itemDescription}
                                 </p>
                             </div>
+                            <button className="btn btn-primary" onClick={(e) => handleSubmit(e, item.itemId)} data-mdb-ripple-init>Add to Cart</button>
                         </div>
                     </div>
                 ))}
             </div>
-        </div>
+        </form>
     );
 }
 

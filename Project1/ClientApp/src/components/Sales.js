@@ -3,16 +3,25 @@ import React from 'react';
 export default function Sales() {
     const [items, setItems] = React.useState([]);
     const [itemImages, setItemImages] = React.useState({});
+    const [summary, setSummary] = React.useState(null);
 
     React.useEffect(() => {
-        fetch('/api/items')
+        fetch('/api/OrderItems/summary')
+            .then((response) => response.json())
+            .then((data) => {
+                setSummary(data);
+            })
+            .catch((error) => console.error('Error fetching sales summary:', error));
+    }, []);
+
+    React.useEffect(() => {
+        fetch('/api/items/')
             .then(response => { return response.json() })
             .then(data => setItems(data))
             .catch(error => console.error('Error fetching items:', error))
     }, []);
 
     React.useEffect(() => {
-        // Fetch images for each item
         const fetchItemImages = async () => {
             const imagePromises = items.map(async item => {
                 const imageId = item.imageId;
@@ -53,26 +62,18 @@ export default function Sales() {
 
     return (
         <div>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
-                {items.map(item => (
-                    <div key={item.itemId} className="col">
-                        <div className="card">
-                            <img src={itemImages[item.itemId]} className="card-img-top"
-                                alt="Hollywood Sign on The Hill" />
-                            <div className="card-body">
-                                <h5 className="card-title">{item.itemName}</h5>
-                                <p className="card-text">
-                                    Price:&nbsp;{item.price}&nbsp;BD
-                                </p>
-                                <p className="card-text">
-                                    Description:<br />
-                                    {item.itemDescription}
-                                </p>
+            {summary && (
+                <div>
+                    <div className="card" styles="width: 18rem;">
+                        <img src={itemImages[summary.itemId]} className="card-img-top" alt="..." />
+                        <div className="card-body">
+                            <h4 className="card-title">Most Sold Item:</h4>
+                            <p className="card-text">   </p>
                             </div>
-                        </div>
                     </div>
-                ))}
-            </div>
+                    <h3>Total Restaurant Revenue: {summary.totalRevenue.toFixed(2)} BD</h3>
+                </div>
+            )}
         </div>
     );
 }

@@ -10,6 +10,9 @@ const context =  [
     "/api/images",
     "/api/users",
     "/api/categories",
+    "/api/orderCart",
+    "/api/orders",
+    "/api/OrderItems",
 ];               
                  
 module.exports = function(app) {

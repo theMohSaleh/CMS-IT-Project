@@ -9,7 +9,7 @@ using CMSWebpage.Model;
 
 namespace CMSWebpage.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/orderCart")]
     [ApiController]
     public class OrderCartsController : ControllerBase
     {
@@ -31,15 +31,108 @@ namespace CMSWebpage.Controllers
             return await _context.OrderCarts.ToListAsync();
         }
 
+        public class CartRequest
+        {
+            public string userId { get; set; }
+            public string ItemId { get; set; }
+        }
+
+        public class UpdateQuantity
+        {
+            public string userId { get; set; }
+            public string itemId { get; set; }
+            public string increase { get; set; }
+        }
+
+        [HttpPost("adjust")]
+        public async Task<IActionResult> AddToCart([FromBody] UpdateQuantity updateCart)
+        {
+            try
+            {
+                int userId = int.Parse(updateCart.userId);
+                int itemId = int.Parse(updateCart.itemId);
+                int increase = int.Parse(updateCart.increase);
+
+                OrderCart orderItem = await _context.OrderCarts
+                    .Where(x => x.UserId == userId && x.ItemId == itemId)
+                    .FirstOrDefaultAsync();
+
+                if (increase == 1)
+                {
+                    orderItem.Quantity++;
+                    _context.OrderCarts.Update(orderItem);
+                    await _context.SaveChangesAsync();
+                }
+                else if (increase == 0)
+                {
+                    orderItem.Quantity--;
+                    if (orderItem.Quantity == 0)
+                    {
+                        _context.OrderCarts.Remove(orderItem);
+                        await _context.SaveChangesAsync();
+                    }
+                }
+                // return success
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(500, "Internal Server Error: " + ex.Message);
+            }
+        }
+
+        [HttpPost("cart")]
+        public async Task<IActionResult> AddToCart([FromBody] CartRequest newCart)
+        {
+            try
+            {
+                OrderCart orderItem = await _context.OrderCarts
+                    .Where(x => x.UserId == int.Parse(newCart.userId) && x.ItemId == int.Parse(newCart.ItemId))
+                    .FirstOrDefaultAsync();
+
+                // check if item already exists in the cart
+                if (orderItem != null)
+                {
+                    // update save
+                    orderItem.Quantity += 1;
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    // add new item to cart if it was not added previously
+                    OrderCart newOrderItem = new OrderCart
+                    {
+                        UserId = int.Parse(newCart.userId),
+                        ItemId = int.Parse(newCart.ItemId),
+                        Quantity = 1
+                    };
+                    // save
+                    _context.OrderCarts.Add(newOrderItem);
+                    await _context.SaveChangesAsync();
+                }
+
+                // return success
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return StatusCode(500, "Internal Server Error: " + ex.Message);
+            }
+        }
+
         // GET: api/OrderCarts/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<OrderCart>> GetOrderCart(int id)
+        public async Task<ActionResult<IEnumerable<OrderCart>>> GetOrderCart(int id)
         {
           if (_context.OrderCarts == null)
           {
               return NotFound();
           }
-            var orderCart = await _context.OrderCarts.FindAsync(id);
+            var orderCart = await _context.OrderCarts.Where(
+                x => x.UserId == id
+                ).ToListAsync();
 
             if (orderCart == null)
             {

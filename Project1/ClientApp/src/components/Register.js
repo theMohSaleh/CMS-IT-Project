@@ -1,12 +1,8 @@
 import React from 'react';
 import Alert from './Alert';
 import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom"
-
 
 export default function Register() {
-
-    const navigate = useNavigate();
 
     const [formData, setFormData] = React.useState({
         name: "",
@@ -40,9 +36,6 @@ export default function Register() {
             Role: 2,
         };
 
-        console.log('newUser:', newUser);
-
-
         try {
             const response = await fetch('/api/users/reg', {
                 method: 'POST',
@@ -55,7 +48,6 @@ export default function Register() {
             if (response.ok) {
                 // register successful
                 const pass = await response.json();
-                console.log(pass);
                 if (pass == true) {
                 } else {
                     setShowAlert(true);
