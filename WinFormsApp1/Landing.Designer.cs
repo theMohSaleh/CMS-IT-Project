@@ -352,16 +352,18 @@
             imgTxtBox.Name = "imgTxtBox";
             imgTxtBox.Size = new Size(110, 23);
             imgTxtBox.TabIndex = 33;
+            imgTxtBox.Visible = false;
             // 
             // img
             // 
-            img.Location = new Point(517, 83);
+            img.Location = new Point(538, 84);
             img.Margin = new Padding(3, 2, 3, 2);
             img.Name = "img";
             img.Size = new Size(82, 22);
             img.TabIndex = 32;
             img.Text = "add";
             img.UseVisualStyleBackColor = true;
+            img.Visible = false;
             img.Click += img_Click;
             // 
             // panel2

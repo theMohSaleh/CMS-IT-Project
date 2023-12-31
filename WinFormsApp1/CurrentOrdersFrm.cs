@@ -52,12 +52,12 @@ namespace POS
             // get delivery orders
             var deliveryOrders = dbContext.Orders
                 .Include(o => o.User)
-                .Where(order => order.IsOccupied == 1)
+                .Where(x => x.IsOccupied == 1)
                 .ToList();
             // get takeAway orders
             var takeAwayOrders = dbContext.Orders
                 .Include(o => o.User)
-                .Where(order => order.IsOccupied == 0)
+                .Where(x => x.IsOccupied == 0)
                 .ToList();
 
             // clear items for when resetting the data
@@ -67,27 +67,32 @@ namespace POS
             // loop through each delivery item
             foreach (var order in deliveryOrders)
             {
-                // create a list item for each order
-                ListViewItem listItem = new ListViewItem(order.User!.Name)
-                {
-                    Tag = order
-                };
+                if (order.User != null) {
+                    // create a list item for each order
+                    ListViewItem listItem = new ListViewItem(order.User!.Name)
+                    {
+                        Tag = order
+                    };
 
-                // add the ListViewItem to the ListView
-                listView1.Items.Add(listItem);
+                    // add the ListViewItem to the ListView
+                    listView1.Items.Add(listItem);
+                }
             }
 
             // loop through each take away item
             foreach (var order in takeAwayOrders)
             {
-                // create a list item for each order
-                ListViewItem listItem = new ListViewItem(order.User!.Name)
+                if (order.User != null)
                 {
-                    Tag = order
-                };
+                    // create a list item for each order
+                    ListViewItem listItem = new ListViewItem(order.User!.Name)
+                    {
+                        Tag = order
+                    };
 
-                // add the ListViewItem to the ListView
-                listView2.Items.Add(listItem);
+                    // add the ListViewItem to the ListView
+                    listView2.Items.Add(listItem);
+                }
             }
         }
 
