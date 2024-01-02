@@ -33,8 +33,11 @@ namespace WinFormsApp1
 
         private void New_Order_Load(object sender, EventArgs e)
         {
+            // load color theme
             LoadTheme();
+            // display all menu items
             DisplayAllItems();
+            // if order is not for a table, set text to Takeout
             if (tableNo != 0)
             {
                 orderTypeTxt.Text = "Table " + tableNo;
@@ -90,14 +93,14 @@ namespace WinFormsApp1
                 // Add the image to the LargeImageList
                 listView1.LargeImageList.Images.Add(itemEntity.ItemName.ToString(), image);
 
-                // Create a ListViewItem for each image
+                // create a ListViewItem for each image
                 ListViewItem listItem = new ListViewItem(itemEntity.ItemName + "\n" + itemEntity.Price.ToString() + " BD")
                 {
                     ImageKey = itemEntity.ItemName,
                     Tag = itemEntity
                 };
 
-                // Add the ListViewItem to the ListView
+                // add the ListViewItem to the ListView
                 listView1.Items.Add(listItem);
 
             }

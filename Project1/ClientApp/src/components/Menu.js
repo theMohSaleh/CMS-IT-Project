@@ -1,20 +1,22 @@
 import React from 'react';
+import Alert from './Alert';
 import { useNavigate } from "react-router-dom"
 
 export default function Menu() {
     const [items, setItems] = React.useState([]);
     const [itemImages, setItemImages] = React.useState({});
+    const [showAlert, setShowAlert] = React.useState(false);
     const navigate = useNavigate();
 
     let isLoggedIn = window.sessionStorage.getItem("isLoggedIn")
 
-    React.useEffect(() => {
-        if (isLoggedIn === "true") {
+    //React.useEffect(() => {
+    //    if (isLoggedIn === "true") {
             
-        } else {
-            navigate("/")
-        }
-    }, []);
+    //    } else {
+    //        navigate("/")
+    //    }
+    //}, []);
 
     React.useEffect(() => {
         fetch('/api/items')
@@ -85,7 +87,8 @@ export default function Menu() {
 
                 if (response.ok) {
                     // add successful
-                    window.alert('Item added to cart!');
+                    //window.alert('Item added to cart!');
+                    setShowAlert(true)
                 } else {
                     console.error('Adding cart failed:', response.status, response.statusText);
                 }
@@ -99,12 +102,13 @@ export default function Menu() {
 
     return (
         <form onSubmit={handleSubmit}>
+            {showAlert ? < Alert message="Item added successfully!." type="success" /> : ""}
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {items.map(item => (
                     <div key={item.itemId} className="col">
                         <div className="card">
                             <img src={itemImages[item.itemId]} className="card-img-top"
-                                alt="Hollywood Sign on The Hill" />
+                                alt="Loading..." />
                             <div className="card-body">
                                 <h5 className="card-title">{item.itemName}</h5>
                                 <p className="card-text">

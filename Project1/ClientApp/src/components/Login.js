@@ -7,6 +7,16 @@ export default function Login() {
 
     const navigate = useNavigate();
 
+    let isLoggedIn = window.sessionStorage.getItem("isLoggedIn")
+
+    React.useEffect(() => {
+        if (isLoggedIn === null) {
+
+        } else {
+            navigate("/")
+        }
+    }, []);
+
     const [formData, setFormData] = React.useState({
         email: "",
         password: ""

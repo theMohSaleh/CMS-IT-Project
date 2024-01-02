@@ -7,19 +7,33 @@ export default function NavBar() {
     console.log("Check is set to: ", check)
 
     const [isLoggedIn, setIsLoggedIn] = React.useState(() => {
-        return window.sessionStorage.getItem('isLoggedIn') === 'true';
+        return window.sessionStorage.getItem('isLoggedIn');
     });
 
     React.useEffect(() => {
         console.log('isLoggedIn changed:', isLoggedIn);
-        renderAuthLinks()
-        adminLinks()
-    }, []);
+        //const data = window.sessionStorage.getItem('isLoggedIn');
+    }, [isLoggedIn]);
+
+    //React.useEffect(() => {
+    //    const onStorage = () => {
+    //        isLoggedIn = window.sessionStorage.getItem('isLoggedIn');
+    //        renderAuthLinks()
+    //        adminLinks()
+    //    };
+
+    //    window.addEventListener('storage', onStorage);
+
+    //    return () => {
+    //        window.removeEventListener('storage', onStorage);
+    //    };
+    //}, []);
+
 
     function renderAuthLinks() {
 
-        if (isLoggedIn == true) {
-            console.log('Logout is being called');
+        if (isLoggedIn == "true") {
+            //console.log('Logout is being called');
             return (
                 <>
                     <Link className="btn btn-primary me-3" to="/cart">Cart</Link>
@@ -27,7 +41,7 @@ export default function NavBar() {
                 </>
             );
         } else {
-            console.log('login is being called');
+            //console.log('login is being called');
             return (
                 <>
                     <Link className="btn btn-link px-3 me-2" to="/login">Login</Link>
