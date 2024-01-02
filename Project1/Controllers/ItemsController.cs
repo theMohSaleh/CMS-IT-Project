@@ -156,6 +156,22 @@ namespace CMSWebpage.Controllers
                 return NotFound();
             }
 
+            var cart = await _context.OrderCarts.Where(x => x.ItemId == id).ToListAsync();
+
+            if (cart != null)
+            {
+                _context.OrderCarts.RemoveRange(cart);
+                await _context.SaveChangesAsync();
+            }
+
+            var orders = await _context.OrderItems.Where(x => x.ItemId == id).ToListAsync();
+
+            if (orders != null)
+            {
+                _context.OrderItems.RemoveRange(orders);
+                await _context.SaveChangesAsync();
+            }
+
             _context.Items.Remove(item);
             await _context.SaveChangesAsync();
 

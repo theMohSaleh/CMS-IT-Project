@@ -103,7 +103,7 @@ export default function Menu() {
     return (
         <form onSubmit={handleSubmit}>
             {showAlert ? < Alert message="Item added successfully!." type="success" /> : ""}
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-3 g-4 mt-5 mb-5">
                 {items.map(item => (
                     <div key={item.itemId} className="col">
                         <div className="card">

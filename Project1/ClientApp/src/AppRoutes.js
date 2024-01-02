@@ -7,6 +7,9 @@ import Register from "./components/Register";
 import Cart from "./components/Cart";
 import AddItem from "./components/AddItem"; 
 import Sales from "./components/Sales";
+import EditMenu from "./components/EditMenu";
+import EditItem from "./components/EditItem";
+import EditMenuItems from "./components/EditMenuItems";
 
 const AppRoutes = [
     {
@@ -40,11 +43,22 @@ const AppRoutes = [
     {
         path: '/addItem',
         element: <AddItem />
-    }
-    ,
+    },
     {
         path: '/sales',
         element: <Sales />
+    },
+    {
+        path: '/editMenu',
+        element: <EditMenu />
+    },
+    {
+        path: '/editItem',
+        element: <EditItem />
+    },
+    {
+        path: '/test',
+        element: <EditMenuItems />
     }
 ];
 

@@ -83,7 +83,7 @@ export default function Login() {
     return (
         <form onSubmit={handleLogin}>
 
-            <div className="form-outline mb-4">
+            <div className="form-outline mt-5 mb-5">
                 <input type="email" name="email" value={formData.email} onChange={handleChange} id="form2Example1" className="form-control" />
                 <label className="form-label" htmlFor="form2Example1">Email address</label>
             </div>

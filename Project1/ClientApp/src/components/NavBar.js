@@ -60,7 +60,7 @@ export default function NavBar() {
             return (
                 <>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/login">Modify Menu</Link>
+                        <Link className="nav-link" to="/test">Modify Menu</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/login">View Users</Link>
