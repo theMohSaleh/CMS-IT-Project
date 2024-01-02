@@ -8,7 +8,6 @@ export default function Register() {
         name: "",
         email: "",
         password: "",
-        passwordConfirm: "",
         office: "",
         number: "",
         role: 2
@@ -27,36 +26,41 @@ export default function Register() {
     const handleRegister = async (event) => {
         event.preventDefault();
 
-        const newUser = {
-            Name: formData.name,
-            Email: formData.email,
-            Password: formData.password,
-            Office: formData.office,
-            Number: formData.number,
-            Role: 2,
-        };
+        if (formData.name !== "" && formData.password !== "") {
 
-        try {
-            const response = await fetch('/api/users/reg', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newUser),
-            });
+            const newUser = {
+                Name: formData.name,
+                Email: formData.email,
+                Password: formData.password,
+                Office: formData.office,
+                Number: formData.number,
+                Role: 2,
+            };
 
-            if (response.ok) {
-                // register successful
-                const pass = await response.json();
-                if (pass == true) {
+            try {
+                const response = await fetch('/api/users/reg', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(newUser),
+                });
+
+                if (response.ok) {
+                    // register successful
+                    const pass = await response.json();
+                    if (pass == true) {
+                    } else {
+                        setShowAlert(true);
+                    }
                 } else {
-                    setShowAlert(true);
+                    console.error('Authentication failed:', response.status, response.statusText);
                 }
-            } else {
-                console.error('Authentication failed:', response.status, response.statusText);
+            } catch (error) {
+                console.error('Error during API call:', error);
             }
-        } catch (error) {
-            console.error('Error during API call:', error);
+        } else {
+            alert("Please fill all fields")
         }
     };
 
@@ -86,11 +90,6 @@ export default function Register() {
                                             <div className="form-outline mb-4">
                                                 <input type="password" name="password" value={formData.password} onChange={handleChange} id="form3Example4cg" className="form-control form-control-lg" />
                                                 <label className="form-label" htmlFor="form3Example4cg">Password</label>
-                                            </div>
-
-                                            <div className="form-outline mb-4">
-                                                <input type="password" name="passwordConfirm" value={formData.passwordConfirm} onChange={handleChange} id="form3Example4cdg" className="form-control form-control-lg" />
-                                                <label className="form-label" htmlFor="form3Example4cdg">Repeat your password</label>
                                             </div>
 
                                             <div className="form-outline mb-4">

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"
 
 export default function NavBar() {
+
+    const navigate = useNavigate();
 
     let check = window.sessionStorage.getItem('isLoggedIn')
     console.log("Check is set to: ", check)
@@ -10,30 +13,10 @@ export default function NavBar() {
         return window.sessionStorage.getItem('isLoggedIn');
     });
 
-    React.useEffect(() => {
-        console.log('isLoggedIn changed:', isLoggedIn);
-        //const data = window.sessionStorage.getItem('isLoggedIn');
-    }, [isLoggedIn]);
-
-    //React.useEffect(() => {
-    //    const onStorage = () => {
-    //        isLoggedIn = window.sessionStorage.getItem('isLoggedIn');
-    //        renderAuthLinks()
-    //        adminLinks()
-    //    };
-
-    //    window.addEventListener('storage', onStorage);
-
-    //    return () => {
-    //        window.removeEventListener('storage', onStorage);
-    //    };
-    //}, []);
-
-
     function renderAuthLinks() {
 
         if (isLoggedIn == "true") {
-            //console.log('Logout is being called');
+            
             return (
                 <>
                     <Link className="btn btn-primary me-3" to="/cart">Cart</Link>
@@ -41,7 +24,7 @@ export default function NavBar() {
                 </>
             );
         } else {
-            //console.log('login is being called');
+            
             return (
                 <>
                     <Link className="btn btn-link px-3 me-2" to="/login">Login</Link>
@@ -85,6 +68,7 @@ export default function NavBar() {
         window.sessionStorage.setItem('isLoggedIn', false)
         setIsLoggedIn(false)
         window.sessionStorage.clear();
+        navigate("/");
     }
 
     return (

@@ -31,6 +31,14 @@ namespace CMSWebpage.Controllers
             public string ImageData { get; set; }
         }
 
+        public class ItemEdit
+        {
+            public int itemID { get; set; }
+            public string itemName { get; set; }
+            public string itemDescription { get; set; }
+            public string price { get; set; }
+        }
+
         // GET: api/Items
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Item>>> GetItems()
@@ -125,6 +133,31 @@ namespace CMSWebpage.Controllers
             }
 
             return NoContent();
+        }
+
+
+        [HttpPost("updateItem")]
+        public async Task<IActionResult> updateItem([FromBody] ItemEdit editedItem)
+        {
+            
+            var updateItem =_context.Items.Where(x => x.ItemId == editedItem.itemID).FirstOrDefault();
+
+            if (updateItem == null)
+            {
+                Console.WriteLine(updateItem);
+                return BadRequest();
+            }
+
+            updateItem.ItemName = editedItem.itemName;
+            updateItem.ItemDescription = editedItem.itemDescription;
+            updateItem.Price = double.Parse(editedItem.price);
+
+            // add item to DB
+            _context.Items.Update(updateItem);
+            await _context.SaveChangesAsync();
+
+            // return success
+            return Ok(true);
         }
 
         // POST: api/Items

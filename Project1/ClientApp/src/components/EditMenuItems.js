@@ -9,6 +9,7 @@ export default function Menu() {
     const [showAlert, setShowAlert] = React.useState(false);
     const navigate = useNavigate();
     const [openEdit, setOpenEdit] = React.useState(false);
+    const [itemToEdit, setItemToEdit] = React.useState(null);
 
     let isLoggedIn = window.sessionStorage.getItem("isLoggedIn")
 
@@ -114,6 +115,12 @@ export default function Menu() {
         }
     }
 
+    const handleEditItem = async (id) => {
+        setItemToEdit(id);
+
+        setOpenEdit(true);
+    }
+
     const handleDeleteRow = async (id) => {
         try {
             const response = await fetch(`/api/items/${id}`, {
@@ -162,17 +169,19 @@ export default function Menu() {
                             <td>{item.itemDescription}</td>
                             <td>{item.price} BD</td>
                             <td><span>
-                                <button type="button" onClick={() => setOpenEdit(true)} className="btn btn-info">Edit</button>
+                                <button type="button" onClick={() => handleEditItem(item.itemId)} className="btn btn-info">Edit</button>
                                 <button type="button" onClick={() => handleDeleteRow(item.itemId)} className="btn btn-danger">Delete</button>
                             </span></td>
-                            
+
                         </tr>
                     ))}
                 </tbody>
             </table>
             {openEdit ? <MenuEdit closeEdit={() =>
                 setOpenEdit(false)
-            } /> : ""}
+            }
+                itemID={itemToEdit}
+            /> : ""}
         </div>
     );
 }
