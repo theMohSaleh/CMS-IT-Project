@@ -46,9 +46,6 @@ export default function NavBar() {
                         <Link className="nav-link" to="/test">Modify Menu</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/login">View Users</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link className="nav-link" to="/sales">View Sales</Link>
                     </li>
                     <li className="nav-item">

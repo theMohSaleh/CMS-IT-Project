@@ -173,7 +173,7 @@ export default function Cart() {
                                                     <p><span className="text-muted">Quantity: </span>{quantity}</p>
                                                 </div>
                                                 <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                                    <h5 className="mb-0">{totalItemPrice} BD</h5>
+                                                    <h5 className="mb-0">{totalItemPrice.toFixed(3)} BD</h5>
                                                 </div>
                                                 <div className="col-md-3 col-lg-3 col-xl-2 d-flex ms-auto">
                                                     <button type="button" onClick={() => deleteItem(cartItem.orderCartID)} className="btn btn-outline-danger ms-auto" > Delete</button>

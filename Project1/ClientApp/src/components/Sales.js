@@ -64,14 +64,14 @@ export default function Sales() {
         <div>
             {summary && (
                 <div>
-                    <div className="card" styles="width: 18rem;">
+                    <div className="card mt-5 mb-3" styles="width: 18rem;">
+                        <h4 className="card-title">Most Sold Item:</h4>
                         <img src={itemImages[summary.itemId]} className="card-img-top" alt="..." />
                         <div className="card-body">
-                            <h4 className="card-title">Most Sold Item:</h4>
                             <p className="card-text">   </p>
                             </div>
                     </div>
-                    <h3>Total Restaurant Revenue: {summary.totalRevenue.toFixed(2)} BD</h3>
+                    <h3 className="mb-5">Total Restaurant Revenue: {summary.totalRevenue.toFixed(2)} BD</h3>
                 </div>
             )}
         </div>

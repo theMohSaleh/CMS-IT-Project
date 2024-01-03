@@ -177,6 +177,14 @@ namespace WinFormsApp1
         private void Landing_Load(object sender, EventArgs e)
         {
             UpdateTables();
+            TotalOrders();
+        }
+
+        // method to display the total of unpaid orders
+        private void TotalOrders()
+        {
+            int total = dbContext.Orders.Where(x => x.IsPaid == 0).Count();
+            currentOrdersLbl.Text = total.ToString();
         }
 
         private void Reset()

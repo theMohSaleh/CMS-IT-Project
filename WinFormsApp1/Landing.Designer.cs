@@ -847,7 +847,7 @@
             // 
             currentOrdersLbl.AutoSize = true;
             currentOrdersLbl.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            currentOrdersLbl.Location = new Point(292, 24);
+            currentOrdersLbl.Location = new Point(259, 24);
             currentOrdersLbl.Name = "currentOrdersLbl";
             currentOrdersLbl.Size = new Size(86, 25);
             currentOrdersLbl.TabIndex = 17;
