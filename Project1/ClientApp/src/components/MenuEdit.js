@@ -2,7 +2,7 @@ import React from 'react';
 import "./MenuEdit.css";
 
 
-export const MenuEdit = ({ closeEdit, itemID }) => {
+export const MenuEdit = ({ closeEdit, fetchItems, itemID }) => {
     //const [item, setItem] = React.useState(null);
     const [formData, setFormData] = React.useState({
         itemID: "",
@@ -36,7 +36,7 @@ export const MenuEdit = ({ closeEdit, itemID }) => {
                 itemID: itemID,
                 itemName: formData.itemName,
                 itemDescription: formData.itemDescription,
-                price: formData.price,
+                price: String(formData.price),
             }
 
             console.log("editData:", editData)
@@ -51,8 +51,9 @@ export const MenuEdit = ({ closeEdit, itemID }) => {
 
             if (response.ok) {
                 console.log(`Item ${itemID} edited successfully`);
-                
-                closeEdit(); 
+                alert("item edited successfully.")
+                fetchItems();
+                closeEdit(`Item edited successfully`); 
             } else {
                 const errorMessage = await response.text();
                 console.error(`Error editing item: ${errorMessage}`);

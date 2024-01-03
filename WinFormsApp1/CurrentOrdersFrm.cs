@@ -52,12 +52,14 @@ namespace POS
             // get delivery orders
             var deliveryOrders = dbContext.Orders
                 .Include(o => o.User)
-                .Where(x => x.IsOccupied == 1)
+                .Where(x => x.IsOccupied == 1
+                && x.IsPaid == 0)
                 .ToList();
             // get takeAway orders
             var takeAwayOrders = dbContext.Orders
                 .Include(o => o.User)
-                .Where(x => x.IsOccupied == 0)
+                .Where(x => x.IsOccupied == 0
+                && x.IsPaid == 0)
                 .ToList();
 
             // clear items for when resetting the data
@@ -92,6 +94,14 @@ namespace POS
 
                     // add the ListViewItem to the ListView
                     listView2.Items.Add(listItem);
+                } else
+                {
+                    ListViewItem listItem = new ListViewItem("Order: "+order.OrderId.ToString())
+                    {
+                        Tag = order
+                    };
+                    // add the ListViewItem to the ListView
+                    listView2.Items.Add(listItem);
                 }
             }
         }
@@ -100,15 +110,19 @@ namespace POS
         {
             if (e.IsSelected)
             {
-                // Access the selected order using the Tag property
+                // get order tag
                 Order selectedOrder = e.Item.Tag as Order;
 
-                // Now you have access to the selected order, and you can use its properties as needed
+                // check if order exists and display order items
                 if (selectedOrder != null)
                 {
-                    using (DisplayOrderForm dialogForm = new DisplayOrderForm(selectedOrder.OrderId))
+                    using (DisplayOrderForm displayDialog = new DisplayOrderForm(selectedOrder.OrderId))
                     {
-                        dialogForm.ShowDialog();
+                        DialogResult newDialog = displayDialog.ShowDialog();
+                        if (newDialog == DialogResult.OK)
+                        {
+                            DisplayOrders();
+                        }
                     }
                 }
             }

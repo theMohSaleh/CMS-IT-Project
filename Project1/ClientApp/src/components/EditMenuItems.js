@@ -180,6 +180,9 @@ export default function Menu() {
             {openEdit ? <MenuEdit closeEdit={() =>
                 setOpenEdit(false)
             }
+                fetchItems={() =>
+                    fetchItems()
+                }
                 itemID={itemToEdit}
             /> : ""}
         </div>

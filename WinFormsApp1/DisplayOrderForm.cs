@@ -76,7 +76,7 @@ namespace POS
             DialogResult payDialog = payForm.ShowDialog();
             if (payDialog == DialogResult.OK)
             {
-                this.Close();
+                this.DialogResult = DialogResult.OK;
             }
         }
 

@@ -51,6 +51,7 @@
             // 
             // columnHeader1
             // 
+            columnHeader1.Text = "Delivery Orders:";
             columnHeader1.Width = 290;
             // 
             // label1
@@ -94,6 +95,7 @@
             // 
             // columnHeader2
             // 
+            columnHeader2.Text = "Take Away Orders:";
             columnHeader2.Width = 290;
             // 
             // CurrentOrdersFrm

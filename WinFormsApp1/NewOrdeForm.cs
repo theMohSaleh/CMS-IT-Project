@@ -118,7 +118,7 @@ namespace WinFormsApp1
             Order newOrder = new Order();
             newOrder.TotalAmount = roundedSum;
             newOrder.TableNumber = tableNo;
-            newOrder.IsOccupied = 1;
+            newOrder.IsOccupied = 0;
 
             // add order object to database
             dbContext.Orders.Add(newOrder);
@@ -259,7 +259,9 @@ namespace WinFormsApp1
 
         private void NewOrder_FormClosed(object sender, FormClosedEventArgs e)
         {
-            landingForm.UpdateTables();
+            if (landingForm != null) {
+                landingForm.UpdateTables();
+            }
         }
     }
 }

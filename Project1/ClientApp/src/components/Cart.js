@@ -117,12 +117,12 @@ export default function Cart() {
             if (isChecked) {
                 dataToSend = {
                     userId: userId.toString(),
-                    didCheck: (1).toString()
+                    didCheck: (0).toString()
                 };
             } else {
                 dataToSend = {
                     userId: userId.toString(),
-                    didCheck: (0).toString()
+                    didCheck: (1).toString()
                 };
             }
 

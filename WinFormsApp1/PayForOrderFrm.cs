@@ -46,8 +46,16 @@ namespace POS
                     office = user.Office!;
                 }
 
-                tableNoTxt.Text = order.TableNumber.ToString();
+                tableNoTxt.Text = "none";
                 priceTxt.Text = order.TotalAmount.ToString() + " BD";
+
+                if (order.TableNumber != 0)
+                {
+                    tableNoTxt.Text = order.TableNumber.ToString();
+                    office = "Table " + order.TableNumber;
+                }
+
+                
                 officeLbl.Text = office;
             }
         }

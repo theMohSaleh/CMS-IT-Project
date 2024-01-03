@@ -29,17 +29,24 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
+            columnHeader1 = new ColumnHeader();
             payBtn = new Button();
             button1 = new Button();
             SuspendLayout();
             // 
             // listView1
             // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1 });
             listView1.Location = new Point(12, 12);
             listView1.Name = "listView1";
             listView1.Size = new Size(782, 461);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Order:";
+            columnHeader1.Width = 200;
             // 
             // payBtn
             // 
@@ -81,5 +88,6 @@
         private ListView listView1;
         private Button payBtn;
         private Button button1;
+        private ColumnHeader columnHeader1;
     }
 }

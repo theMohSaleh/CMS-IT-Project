@@ -224,7 +224,7 @@ namespace WinFormsApp1
                             // reset the color of the panel
                             panel.BackColor = Color.SkyBlue;
                         }
-                        // Replace YourEntity and yourCondition with actual entity and condition
+                        // if order has been paid for reset color
                         bool doesNotExist = !dbContext.Orders.Any(x => x.TableNumber == panelTableNumber && x.IsPaid == 0);
 
                         if (doesNotExist)
